@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Layout Bug Fix",
+  "version": "2.0.1",
+  "description": "Automatically fixes layout bugs when switching from Live streams and keeps Theater Mode active.",
+  "icons": {
+    "32": "icon32.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch?v=*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "32": "icon32.png"
+    },
+    "default_title": "YouTube Comment Position Keeper",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
