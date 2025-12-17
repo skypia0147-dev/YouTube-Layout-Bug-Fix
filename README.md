@@ -1,37 +1,46 @@
-# YouTube Layout Bug Fix
+# [Chrome Extension] Comments Gone? It happens on Vertical Monitors & Split Screens!
 
-**"YouTube 라이브를 보고 난 뒤, 일반 영상의 댓글창이 사라지거나 레이아웃이 깨지나요?"**
-이 확장 프로그램은 그 버그를 자동으로 감지하고, 0.1초 만에 수정해주는 해결사입니다.
+Do you use a **Vertical Monitor**? Or perhaps you often **split your screen** to watch YouTube while working on something else?
 
-## 🤯 문제 상황 (The Problem)
-YouTube에서 **라이브 방송(Live Stream)**을 시청하다가 **일반 동영상**으로 넘어갈 때, 종종 다음과 같은 치명적인 버그가 발생합니다:
-*   댓글창이 있어야 할 곳에 추천 영상이 덮어씌워짐.
-*   오른쪽 사이드바가 텅 비어버림.
-*   레이아웃이 깨져서 새로고침을 수동으로 해야 함.
+If so, you might have experienced this annoying bug:  
+> **"Watching a YouTube Live stream, then clicking on a normal video, only to find the comment section has completely disappeared."**
 
-## 💡 해결책 (The Solution)
-**YouTube Layout Bug Fix**는 이 전환 과정을 24시간 감시합니다.
-라이브 방송에서 나온 것을 감지하면, 즉시 **스마트한 자동 새로고침**을 수행하여 레이아웃을 '순정 상태'로 되돌려놓습니다.
+This isn't just a random glitch. It is a specific bug that affects anyone using a narrow browser window.
 
-## ✨ 주요 기능 (Features)
+![Bug appearance on Split Screen / Vertical View](https://github.com/user-attachments/assets/placeholder-image-url) 
+*(Note: Please replace with actual image URL if available, or remove this line)*
 
-### 1. Smart Polling (지능형 감시)
-*   무식하게 타이머를 돌리지 않습니다.
-*   로딩이 아무리 느려도, 동영상 로드가 **완료되는 그 정확한 순간**을 포착하여 0.1초 반응속도로 문제를 해결합니다.
+## 1. Who is affected? (Bug Conditions)
+This issue occurs **100% of the time** under the following specific conditions.
 
-### 2. Force Initial Setup (자동 초기화)
-*   브라우저를 켜고 첫 영상을 재생할 때, 확장 프로그램이 잘 작동하도록 **스스로 1회 세팅(새로고침)**을 수행합니다.
-*   사용자가 신경 쓸 것은 아무것도 없습니다. 그냥 설치하고 잊으세요.
+💡 **Affected Environments:**
+1.  **Vertical Monitor Users:** Developers or designers using pivot monitors.
+2.  **Split Screen / Multitaskers:** Users who drag the browser to the side (Windows Snap) or resize the window to be narrow.
 
-### 3. Pure & Lite (가벼움)
-*   복잡한 CSS 조작이나 무거운 스크립트가 없습니다.
-*   YouTube 본연의 코드를 존중하며, 오직 버그가 발생했을 때만 개입합니다.
-*   **Theater Mode(극장 모드)**도 문제없이 호환됩니다.
+**The Trigger:** Watching YouTube Live (Chat active) → Clicking a Normal Video.  
+**The Result:** Comments disappear because the browser fails to switch from the "Live Chat Layout" to the "Normal Comment Layout" in a narrow viewport.
 
-## 🚀 사용 방법
-1.  이 확장 프로그램을 설치합니다.
-2.  YouTube 영상을 시청합니다.
-3.  끝입니다! 이제 라이브와 일반 영상을 자유롭게 넘나드세요.
+## 2. Why does this happen?
+YouTube is a "Responsive Web." When the window width is narrow (like on a mobile phone, vertical monitor, or split screen), the layout changes.
 
----
-*Version 1.9.5*
+The problem is that when you move from a Live stream to a normal video, Chrome often gets confused and thinks, *"Should I still keep the Chat Box space?"* This causes the comment section to fail to load or be covered by the recommended video list.
+
+## 3. Solution: YouTube Layout Bug Fix
+Resizing the window back and forth or refreshing (F5) every time is frustrating. I developed an extension to fix this automatically for all "Narrow View" users.
+
+### Key Features:
+*   **Auto Detection:** Detects layout breakage in any narrow environment (Vertical Monitor, Split Screen, etc.).
+*   **Auto Recovery:** No manual action needed. It automatically refreshes and restores the comment section instantly.
+
+## 4. Download
+[Download YouTube Layout Bug Fix](https://github.com/skypia0147-dev/YouTube-Layout-Bug-Fix/releases)
+
+## 5. How to Install
+Since this is a custom extension, follow these simple steps to install:
+
+1.  Download the file above and unzip it.
+2.  Open Chrome, type `chrome://extensions` in the address bar, and press Enter.
+3.  Toggle the **'Developer mode'** switch in the top right corner to **ON**.
+4.  Click the newly appeared **'Load unpacked'** button.
+5.  Select the unzipped `YouTube Layout Bug Fix` folder.
+6.  Once loaded, the installation is complete!
